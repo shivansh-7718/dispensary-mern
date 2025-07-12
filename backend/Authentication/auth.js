@@ -6,7 +6,7 @@ exports.studentAuth=async(req,res,next)=>{
     try{
         const token=req.cookies.token;
         if(token){
-            const decode=jwt.verify(token,"Its_My_Secret_Key");
+            const decode = jwt.verify(token, process.env.JWT_SECRET);
             req.user=await UserModel.findById(decode.userId).select('-password');
             next();
         }else{
@@ -23,7 +23,7 @@ exports.adminFacultyAuth=async(req,res,next)=>{
     try{
         const token=req.cookies.token;
         if(token){
-            const decode=jwt.verify(token,"Its_My_Secret_Key");
+            const decode = jwt.verify(token, process.env.JWT_SECRET);
             req.user=await UserModel.findById(decode.userId).select('-password');
 
             if(req?.user?.role==="student"){
