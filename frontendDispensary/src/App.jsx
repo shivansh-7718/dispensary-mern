@@ -14,7 +14,7 @@ import Record from './pages/Admin/Records/record'
 import Facility from './pages/Admin/Facility/facility'
 import NearByHospital from './pages/Admin/NearByHospital/nearByHospital'
 import Gallery from './pages/Admin/Gallery/gallery'
-import StudentDashBoard from './pages/Student/studentDashBoard'
+import StudentDashBoard from './pages/Student/studentDashboard'
 import GlobalLoader from './components/GlobalLoader/globalLoader'
 
 function App() {
